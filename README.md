@@ -5,7 +5,12 @@ This is just a prototype and its probably full of bugs. Its not tested at all, j
 
 ## How to use
 
-Create a class annotated with the `@UrlScraper` annotation and let the 
+Create a class annotated with the `@UrlScraper` annotation and let the library inject the requested elements.
+There are three main type of injection:
+- `@Auto` injects user defined classes that are annotated with the `@Scraper` annotation.
+- `@Element` injects HtmlUnit elements like `HtmlBody`.
+- `@TextContent` injects String that represent the textContent of a dom node.
+Every annotation can manage a List of elements if the type of the class parameter is a `List`.
 
 ```java
 @UrlScraper(url = "http://example.com/")
