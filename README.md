@@ -8,7 +8,7 @@ This is just a prototype and its probably full of bugs. Its not tested at all, j
 Create a class annotated with the `@UrlScraper` annotation and let the 
 
 ```java
-@UrlScraper(url = "https://api.cloudflare.com/")
+@UrlScraper(url = "http://example.com/")
 public class PageScraper {
 
 	@Element(xpath = "/html/body/")
@@ -22,7 +22,7 @@ public class PageScraper {
 	public static void main(String[] args) {
 		WebScrape<PageScraper> webScraper = WebScrape.run(PageScraper.class);
 
-    // Instance with injected properties
+    	// Instance with injected properties
 		PageScraper scraper = webScraper.getResult();
 	}
 }
